@@ -3968,7 +3968,7 @@ bool CheckBlock(const CBlock& block, CValidationState& state, const Consensus::P
         bool mutated;
         uint256 hashMerkleRoot2 = BlockMerkleRoot(block, &mutated);
         if (block.hashMerkleRoot != hashMerkleRoot2) {
-            return state.DoS(100, false, REJECT_INVALID, "bad-txnmrklroot", true, strprintf("hashMerkleRoot mismatch in block: %s, hashed: %s", block.hashMerkleRoot.ToString(), hashMerkleRoot2.ToString())");
+            return state.DoS(100, false, REJECT_INVALID, "bad-txnmrklroot", true, strprintf("hashMerkleRoot mismatch in block: %s, hashed: %s", block.hashMerkleRoot.ToString(), hashMerkleRoot2.ToString()));
 	}
 
         // Check for merkle tree malleability (CVE-2012-2459): repeating sequences
